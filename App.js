@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+// import storybook from './storybook';
+import Swipe from './components/swipe';
+import testData from './testData';
+
+export default class App extends Component {
+  state = {
+    progress: 0,
+    rowIndex: 0,
+  };
+
+  render() {
+    let data = testData[0];
+    this.progress = data.progress;
+    return (
+      <View style={styles.container}>
+        <Text>Progress: {this.state.progress}</Text>
+        <Text>Row Index: {this.state.rowIndex}</Text>
+        <View>
+          <Swipe data={data} />
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000',
+    // alignContent: 'flex-start',
+    // justifyContent: 'center',
   },
 });
