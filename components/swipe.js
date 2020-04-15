@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, Dimensions, Animated, PanResponder } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Carousel from 'react-native-snap-carousel';
+
 import RowCard from './card';
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SWIPE_THRESHOLD = 0.5 * SCREEN_WIDTH;
 const SWIPE_OUT_DURATION = 250;
