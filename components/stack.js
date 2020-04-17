@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { View, Dimensions, Animated, PanResponder } from 'react-native';
-import { Block, Button, Card, Icon, Input, NavBar, Text } from 'galio-framework';
+import React from 'react';
+import  View from 'react-native';
+import { Block, Button, Icon, Input, NavBar, Text } from 'galio-framework';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Carousel from 'react-native-snap-carousel';
 
 
+//  <Carousel layout={'stack'} layoutCardOffset={`18`} />
 
-<Carousel layout={'stack'} layoutCardOffset={`18`} />
-
- _renderItem({item,index}){
+ const _renderItem = ({item,index}) => {
   return (
     <View style={{
         backgroundColor:'floralwhite',
@@ -28,7 +27,9 @@ return (
   <Carousel
     ref={(c) => { this._carousel = c; }}
     data={this.state.entries}
-    renderItem={this._renderItem}
+    layout={'stack'}
+    layoutCardOffset={'18'}
+    renderItem={_renderItem}
     sliderWidth={sliderWidth}
     itemWidth={itemWidth}
   />
