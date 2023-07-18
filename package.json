@@ -1,52 +1,26 @@
 {
+  "name": "ribit-mobile",
+  "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "import": "node --experimental-modules ./rows.mjs",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject",
-    "storybook": "start-storybook -p 7007"
+    "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^36.0.0",
-    "fsevents": "^2.1.2",
-    "galio-framework": "^0.6.3",
-    "git": "^0.1.5",
-    "mobx": "^5.15.4",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz",
-    "react-native-elements": "^1.2.7",
-    "react-native-snap-carousel": "^3.9.0",
-    "react-native-vector-icons": "^6.6.0",
-    "@sayem314/react-native-keep-awake": "^1.0.3",
-    "react-native-web": "~0.11.7"
+    "expo": "~48.0.18",
+    "expo-status-bar": "~1.4.4",
+    "galio-framework": "^0.8.0",
+    "react": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-elements": "^3.4.3",
+    "react-native-snap-carousel": "^3.9.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@storybook/addon-actions": "^5.3.18",
-    "@storybook/addon-links": "^5.3.18",
-    "@storybook/addon-ondevice-actions": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
-    "@storybook/react-native": "^5.3.18",
-    "@storybook/react-native-server": "^5.3.18",
-    "babel-loader": "^8.1.0",
-    "babel-preset-expo": "~8.1.0",
-    "chai": "^4.2.0",
-    "mocha": "^7.1.1"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/__mocks__/globalMock.js"
-    ]
+    "@babel/core": "^7.20.0",
+    "cypress": "^12.17.1",
+    "storybook": "^7.1.0"
   },
   "private": true
 }

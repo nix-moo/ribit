@@ -4,7 +4,7 @@ import { Card, Text, Icon } from 'galio-framework';
 
 const RowCard = (row) => {
   let num = row.num;
-  let myTitle = num.toString();
+  let myTitle = toString(num);
   return (
     <Card
       title={myTitle}
@@ -12,7 +12,8 @@ const RowCard = (row) => {
       containerStyle={styles.container}
       // wrapperStyle={styles.wrapper}
     >
-      <Icon name="frown" family="Galio" color={rgb(100, 120, 40)} size={10} />
+      {/* <Icon name="frown" family="Galio" color={rgb(100, 120, 40)} size={10} /> */}
+      <Icon name="frown" family="Galio" size={10} />
       <View style={styles.detailWrapper}>
         <Text>{row.text}</Text>
         {/* <Text style={styles.text}>{row.text}</Text> */}
