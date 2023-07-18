@@ -7,17 +7,19 @@ const RowCard = (row) => {
   let myTitle = toString(num);
   return (
     <Card
-      title={myTitle}
-      titleStyle={{ fontSize: 14 }}
-      containerStyle={styles.container}
+      flex
+      // title={row.text}
+      title="Hello"
+      style={{ backgroundColor: '#fff' }}
+      titleStyle={{ fontSize: 40, color: 'darkgray' }}
+      // containerStyle={styles.container}
       // wrapperStyle={styles.wrapper}
     >
       {/* <Icon name="frown" family="Galio" color={rgb(100, 120, 40)} size={10} /> */}
-      <Icon name="frown" family="Galio" size={10} />
-      <View style={styles.detailWrapper}>
-        <Text>{row.text}</Text>
-        {/* <Text style={styles.text}>{row.text}</Text> */}
-      </View>
+      {/* <Icon name="frown" family="feather" size={100} /> */}
+      {/* <View style={styles.detailWrapper}> */}
+
+      {/* <Text h1>{row.text}</Text> */}
     </Card>
   );
 };
@@ -27,15 +29,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 10,
-    backgroundColor: '#000',
   },
-  // text: {
-  //   fontSize: 30,
-  //   color: 'darkgray',
-  // },
+  text: {
+    fontSize: 30,
+    color: 'darkgray',
+  },
   container: {
-    backgroundColor: '#000',
-    padding: 50,
+    flex: 1,
+    padding: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
   },
   // wrapper: {},
 });

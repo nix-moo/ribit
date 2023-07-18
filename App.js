@@ -3,7 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 
 // import storybook from './storybook';
 import Swipe from './components/swipe';
-import testData from './testData.json';
+import Stack from './components/stack';
+import testData from './TTestData.js';
 
 export default function App() {
   state = {
@@ -11,16 +12,13 @@ export default function App() {
     rowIndex: 0,
   };
 
-  // this.progress = testData[progress];
+  // console.log(testData);
+  // this.progress = testData.progress;
 
   return (
-    <View style={styles.container}>
-      <Text>Progress: {this.state.progress}</Text>
-      <Text>Row Index: {this.state.rowIndex}</Text>
-      <Text>testData</Text>
-      <View>
-        <Swipe data={testData} />
-      </View>
+    <View >
+      {/* <Swipe data={testData} /> */}
+      <Stack data={testData} />
     </View>
   );
 }
@@ -28,8 +26,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '80%',
+    height: '80%',
   },
 });

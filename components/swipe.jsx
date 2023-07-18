@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, Dimensions, Animated, PanResponder } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Carousel from 'react-native-snap-carousel';
 
 import RowCard from './card';
 
@@ -43,14 +42,28 @@ class Swipe extends Component {
     return {
       ...position.getLayout(),
       transform: [{ rotate }],
-      backgroundColor: '#000',
+      // backgroundColor: '#000',
     };
   }
 
+  renderNoMoreCards = () => {
+    return (
+      <Card title="You're done!">
+        <Button
+          title="HOORAY!"
+          large
+          icon={{ name: 'my-location' }}
+          backgroundColor="#03A9F4"
+        />
+      </Card>
+    );
+  };
+
   renderCardItem = (row, index) => {
-    if (!row) {
-      return renderNoMoreCards();
+    if (!row.num) {
+      return this.renderNoMoreCards();
     }
+
     return index === 0 ? (
       <Animated.View
         style={this.getCardStyle()}
@@ -68,25 +81,19 @@ class Swipe extends Component {
 
   renderCards = (data) => {
     let rows = data.rows; // returns an array
-    return rows.map(this.renderCardItem);
-  };
-
-  renderNoMoreCards = () => {
-    return (
-      <Card title="You're done!">
-        <Button
-          title="HOORAY!"
-          large
-          icon={{ name: 'my-location' }}
-          backgroundColor="#03A9F4"
-        />
-      </Card>
-    );
+    return rows.map((row, index) => this.renderCardItem(row, index));
   };
 
   render() {
     let { data } = this.props;
-    return <View>{this.renderCards(data)}</View>;
+
+    return (
+      <View>
+        <Text>{data.title}</Text>
+        {/* <Text>{typeof data.rows[0]}</Text> */}
+        <View>{this.renderCards(data)}</View>
+      </View>
+    );
   }
 }
 export default Swipe;

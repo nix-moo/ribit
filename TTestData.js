@@ -1,4 +1,4 @@
-export const testData = {
+const testData = {
   title: 'Very Long Socks',
   progress: 30,
   author: 'Purl Soho',
@@ -183,3 +183,5 @@ export const testData = {
     { num: 52, text: 'Use Kitchener Stitch to graft the Toe closed.' },
   ],
 };
+
+export default testData;
